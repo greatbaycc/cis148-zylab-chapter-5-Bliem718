@@ -1,9 +1,38 @@
 import java.util.Scanner;
 
 public class Hailstone {
+
     public int hailstone(int num) {
-        /* Type your code here. */
-        return 0; //replace this when ready to work on this method
+        int i = 1;
+        if (num == 1) {
+            System.out.print(num);
+        }
+        else {
+            System.out.print(num + "\t");
+        }
+        while (num != 1) {
+            if (num % 2 == 0) {
+                num /= 2;
+                System.out.print(num);
+            }
+            else if (num % 2 == 1) {
+                num = (num * 3) + 1;
+                System.out.print(num);
+            }
+            if (num != 1) {
+                System.out.print("\t");
+            }
+            else {
+                break;
+            }
+            ++i;
+            if (i >= 10) {
+                System.out.println();
+                i = 0;
+            }
+        }
+        System.out.println();
+        return num;
     }
 
     public static void main(String[] args) {
